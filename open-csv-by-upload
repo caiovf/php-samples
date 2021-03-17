@@ -1,0 +1,19 @@
+<?php
+    $csv = $_FILES['archive'];
+    $arquivo_aberto = fopen($_FILES['archive']['tmp_name'],'r');
+    
+    if( $arquivo_aberto ) {
+        
+        $row = 0;
+        while ($linha = fgetcsv($arquivo_aberto, 1000, ";")) {
+            if ($row++ == 0) {
+                continue;
+            }
+            
+            $usuarios = [
+                'name' => '',
+                'email' => $linha[4],
+            ];                                    
+        }
+    }    
+?>
