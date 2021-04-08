@@ -1,0 +1,8 @@
+function get_card($arquivo,$value){
+    ob_start();
+    include $arquivo;
+    $contents = ob_get_contents();
+    ob_end_clean();
+
+    return $contents;
+}
